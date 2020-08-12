@@ -20,9 +20,6 @@ function webpackFinal(webpackConfig, options) {
     if (webpackConfig === void 0) { webpackConfig = {}; }
     if (options === void 0) { options = {}; }
     node_logger_1.logger.info("=> Loading Pseudo States Addon Webpack config (Angular Cli)");
-    var foo = JSON.stringify(options);
-    node_logger_1.logger.info("thing: " + foo);
-    console.log('foo: ', foo);
     if ((_a = webpackConfig === null || webpackConfig === void 0 ? void 0 : webpackConfig.module) === null || _a === void 0 ? void 0 : _a.rules) {
         var postCSSDefaultOptions = __assign(__assign({}, preset_utils_1.postCSSOptionsDefault), { prefix: types_1.PseudoStatesDefaultPrefixAlternative, blacklist: [
                 ':root',
@@ -30,6 +27,8 @@ function webpackFinal(webpackConfig, options) {
                 ':host-context',
                 ':nth-child',
                 ':nth-of-type',
+                ':not',
+                ':enabled',
             ] });
         var postCssLoaderOptions = (options === null || options === void 0 ? void 0 : options.postCssLoaderPseudoClassesPluginOptions) ? __assign(__assign({}, postCSSDefaultOptions), options.postCssLoaderPseudoClassesPluginOptions) : postCSSDefaultOptions;
         var rulesToApply = options === null || options === void 0 ? void 0 : options.rules;
